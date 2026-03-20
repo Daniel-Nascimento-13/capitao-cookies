@@ -1,0 +1,1257 @@
+/* ============================================================
+   RESET GLOBAL
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+/* ============================================================
+   [ 1 ] VÍDEO DE FUNDO
+   Fixo na tela, cobre tudo em object-fit cover.
+   O overlay cria um escurecimento suave por cima.
+   ============================================================ */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+
+/* ============================================================
+   [ 2 ] HERO
+   Espaço em branco que ocupa 100vh para dar espaço ao vídeo.
+   ============================================================ */
+.hero {
+  height: 100vh;
+}
+
+
+/* ============================================================
+   [ 3 ] SOBRE
+   Foto do fundador e texto lado a lado.
+   ============================================================ */
+.sobre {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 8% 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.sobre-foto {
+  flex: 0 0 380px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sobre-foto img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 40px rgba(198, 139, 74, 0.15));
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.5s ease;
+}
+
+.sobre-foto img:hover {
+  transform: scale(1.03) translateY(-6px);
+  filter: drop-shadow(0 40px 50px rgba(198, 139, 74, 0.28));
+}
+
+.sobre-texto {
+  flex: 1;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Tag laranja reutilizada em várias seções */
+.sobre-tag {
+  font-size: 0.9rem;
+  font-weight: 550;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C68B4A;
+}
+
+.sobre-texto h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.sobre-texto h2 span {
+  color: #C68B4A;
+}
+
+.sobre-texto p {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.75;
+  font-weight: 400;
+  max-width: 480px;
+}
+
+.sobre-linha {
+  width: 60px;
+  height: 1px;
+  background: #C68B4A;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sobre-assinatura {
+  font-size: 0.9rem !important;
+  color: #C68B4A !important;
+  font-weight: 500 !important;
+  text-align: center;
+}
+
+
+/* ============================================================
+   [ 4 ] ONDA DE TRANSIÇÃO
+   SVG que faz a transição visual entre Sobre e a Faixa.
+   ============================================================ */
+.onda-container {
+  width: 100%;
+  height: 250px;
+  line-height: 0;
+  margin-top: -250px;
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.onda-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ============================================================
+   [ 5 ] FAIXA DE TEXTO CORRIDO
+   Banner laranja com texto animado em loop pelo JS.
+   ============================================================ */
+.faixa-corrida {
+  background: #C68B4A;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 15px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.faixa-track {
+  display: inline-flex;
+  gap: 60px;
+  will-change: transform;
+}
+
+.faixa-track span {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+/* ============================================================
+   [ 6 ] TÍTULO DO MENU
+   Cabeçalho da seção de produtos.
+   ============================================================ */
+.menu-titulo {
+  background: #000;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 60px 5% 0;
+}
+
+.menu-titulo h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.menu-titulo h2 span {
+  color: #C68B4A;
+}
+
+
+/* ============================================================
+   [ 7 ] MENU DE PRODUTOS (WRAPPER)
+   Container pai de todo o bloco de produtos.
+   ============================================================ */
+.menu-wrapper {
+  position: relative;
+  background: #000;
+  z-index: 10;
+  overflow: visible;
+  padding-bottom: 150px;
+}
+
+
+/* ============================================================
+   [ 7.1 ] GRID DE COOKIES
+   Grid 2 colunas com cards que têm imagens flutuantes no topo.
+   ============================================================ */
+.menu {
+  background: #000;
+  padding: 60px 5% 120px;
+  position: relative;
+  z-index: 10;
+}
+
+.cookies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 180px 35px;
+  max-width: 760px;
+  margin: 0 auto;
+  align-items: start;
+  padding-top: 180px;
+}
+
+/* Cards da coluna da direita têm desnível para efeito visual */
+.card-par {
+  margin-top: 90px;
+}
+
+.card {
+  background: #151515;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  min-height: 260px;
+  height: auto;
+  padding: 120px 25px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: #1c1c1c;
+}
+
+/* Imagem do cookie flutua acima do card */
+.img-box {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  display: flex;
+  justify-content: center;
+}
+
+.img-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Variante para os ovos de cookie (menores) */
+.img-box--ovo {
+  top: -120px;
+  width: 200px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Badge de descrição do produto */
+.tag {
+  background: #C68B4A;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 18px;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.preco {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Controles de quantidade +/− */
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-qty {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #C68B4A;
+  background: transparent;
+  color: #C68B4A;
+  font-size: 1.3rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-qty:hover {
+  background: #C68B4A;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.btn-qty:active {
+  transform: scale(0.95);
+}
+
+.qty-display {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  min-width: 20px;
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Linha de sabor (card Black com Ferrero/Nutella) */
+.sabor-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  transition: border-color 0.2s;
+}
+
+.sabor-linha:hover {
+  border-color: #C68B4A44;
+}
+
+.btn-sabor-label {
+  background: transparent;
+  border: none;
+  color: #C68B4A;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: default;
+  padding: 0;
+  min-width: 60px;
+  text-align: left;
+}
+
+/* Imagem decorativa do Anderson com olhos virados */
+.card-decorativo {
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  z-index: 12;
+}
+
+.card-decorativo img {
+  width: 320px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transform: rotate(15deg);
+}
+
+
+/* ============================================================
+   [ 7.2 ] FLIP CARD — Sugestão de sabor
+   Ao clicar/hover vira e mostra o verso com a recompensa.
+   ============================================================ */
+.texto-lateral {
+  position: absolute;
+  bottom: 300px;
+  right: 350px;
+  z-index: 12;
+  width: 280px;
+  text-align: right;
+  perspective: 1000px;
+}
+
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  cursor: pointer;
+}
+
+.card-flip:hover,
+.card-flip.virado {
+  transform: rotateY(180deg);
+}
+
+.card-frente,
+.card-verso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #C68B4A;
+}
+
+.card-verso {
+  transform: rotateY(180deg);
+}
+
+.card-flip h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.card-flip h2 span {
+  color: #C68B4A;
+}
+
+.card-flip p {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   [ 7.3 ] IMAGEM DECORATIVA FINAL
+   Anderson com o celular, posicionada no canto direito.
+   ============================================================ */
+.imagem-final {
+  position: absolute;
+  bottom: 0;
+  right: -150px;
+  z-index: 11;
+}
+
+.imagem-final img {
+  width: 620px;
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ============================================================
+   [ 7.4 ] BOTÃO WHATSAPP — Enviar ideia de sabor
+   ============================================================ */
+.btn-whatsapp {
+  position: absolute;
+  bottom: 170px;
+  right: 23px;
+  z-index: 13;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 550;
+  padding: 14px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp img {
+  width: 26px;
+  height: 26px;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+}
+
+
+/* ============================================================
+   [ 8 ] CARRINHO
+   Seção de pedido com lista de itens, total, entrega e botão.
+   ============================================================ */
+.carrinho-section {
+  background: #000;
+  position: relative;
+  z-index: 10;
+  padding: 80px 5% 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  border-top: none;
+  overflow: visible;
+}
+
+/* Degradê dourado no topo da seção */
+.carrinho-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(to bottom, rgba(198, 139, 74, 0.18) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carrinho-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Canvas da chuva de emojis 🍪 */
+#chuva-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+
+/* [ 8.1 ] Título do carrinho */
+.carrinho-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.carrinho-titulo h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.carrinho-titulo h2 span {
+  color: #C68B4A;
+}
+
+
+/* [ 8.2 ] Imagem do Anderson com badge de quantidade */
+.carrinho-cena {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  justify-content: center;
+}
+
+.carrinho-svg-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.carrinho-foto {
+  width: 360px;
+  max-width: 90vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 50px rgba(198, 139, 74, 0.2));
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.carrinho-svg-wrap:hover .carrinho-foto {
+  filter: drop-shadow(0 35px 60px rgba(198, 139, 74, 0.4));
+  transform: translateY(-6px);
+}
+
+.carrinho-badge {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  background: #C68B4A;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(198, 139, 74, 0.6);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+  border: 3px solid #000;
+}
+
+.carrinho-badge.pulsa {
+  animation: pulsa 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes pulsa {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+
+/* [ 8.3 ] Lista de itens */
+.carrinho-lista {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.carrinho-vazio {
+  text-align: center;
+  color: #555;
+  font-size: 1.05rem;
+  font-family: 'Fredoka', sans-serif;
+  padding: 20px 0;
+}
+
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 16px;
+  padding: 14px 20px;
+  gap: 12px;
+  animation: entrar 0.3s ease;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.item-nome {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.item-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-qty-num {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #C68B4A;
+  min-width: 20px;
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.item-preco {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #C68B4A;
+  font-family: 'Fredoka', sans-serif;
+  min-width: 70px;
+  text-align: right;
+}
+
+.btn-item-qty {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid #C68B4A;
+  background: transparent;
+  color: #C68B4A;
+  font-size: 1.1rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-item-qty:hover {
+  background: #C68B4A;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+
+/* [ 8.4 ] Linha de total */
+.carrinho-total-linha {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 18px;
+  margin-top: 4px;
+}
+
+.total-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #888;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.total-valor {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #C68B4A;
+  font-family: 'Fredoka', sans-serif;
+}
+
+
+/* [ 8.5 ] Seletor retirada / entrega */
+.entrega-box {
+  width: 100%;
+  max-width: 560px;
+  flex-direction: column;
+  gap: 14px;
+  animation: entrar 0.3s ease;
+}
+
+.entrega-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #888;
+  font-family: 'Fredoka', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.entrega-opcoes {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-entrega {
+  flex: 1;
+  background: #111;
+  border: 2px solid #2a2a2a;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 16px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.btn-entrega:hover {
+  border-color: #C68B4A;
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.btn-entrega.ativo {
+  border-color: #C68B4A;
+  background: rgba(198, 139, 74, 0.12);
+  color: #C68B4A;
+}
+
+.entrega-endereco {
+  animation: entrar 0.25s ease;
+}
+
+.endereco-input {
+  width: 100%;
+  background: #111;
+  border: 2px solid #2a2a2a;
+  border-radius: 16px;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  padding: 14px 16px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+
+.endereco-input::placeholder {
+  color: #444;
+}
+
+.endereco-input:focus {
+  border-color: #C68B4A;
+}
+
+
+/* [ 8.6 ] Botão finalizar pedido */
+.btn-finalizar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #25D366;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+  margin-top: 8px;
+}
+
+.btn-finalizar:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+}
+
+.btn-finalizar:disabled,
+.btn-finalizar.desabilitado {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-finalizar img {
+  width: 26px;
+  height: 26px;
+}
+
+
+/* ============================================================
+   [ 9 ] RODAPÉ
+   ============================================================ */
+.rodape {
+  background: #000;
+  border-top: 1px solid #1a1a1a;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 30px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rodape p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.rodape strong {
+  color: #C68B4A;
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE — ATÉ 768PX
+   Mantém estrutura IDÊNTICA ao desktop.
+   Todos os elementos seguem a mesma ordem [ 1 ] → [ 9 ].
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* [ 3 ] SOBRE */
+  .sobre {
+    gap: 24px;
+    padding: 50px 4% 0;
+    max-width: 100%;
+  }
+
+  .sobre-foto {
+    flex: 0 0 150px;
+  }
+
+  .sobre-foto img {
+    max-width: 150px;
+  }
+
+  .sobre-texto {
+    padding-bottom: 40px;
+    gap: 10px;
+  }
+
+  .sobre-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+  }
+
+  .sobre-texto h2 {
+    font-size: 1.35rem;
+  }
+
+  .sobre-texto p {
+    font-size: 0.75rem;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+
+  .sobre-assinatura {
+    font-size: 0.68rem !important;
+  }
+
+  /* [ 4 ] ONDA */
+  .onda-container {
+    height: 120px;
+    margin-top: -120px;
+  }
+
+  /* [ 5 ] FAIXA */
+  .faixa-corrida { padding: 8px 0; }
+  .faixa-track   { gap: 36px; }
+  .faixa-track span { font-size: 1.5rem; }
+
+  /* [ 6 ] TÍTULO MENU */
+  .menu-titulo {
+    padding: 32px 5% 0;
+    gap: 8px;
+  }
+  .menu-titulo h2 { font-size: 1.4rem; }
+
+  /* [ 7 ] MENU WRAPPER */
+  .menu-wrapper { padding-bottom: 70px; overflow: hidden; }
+  .menu { padding: 36px 4% 70px; }
+
+  /* [ 7.1 ] GRID DE COOKIES */
+  .cookies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 95px 14px;
+    max-width: 100%;
+    padding: 95px 1% 0;
+  }
+
+  .card-par { margin-top: 47px; }
+
+  .card {
+    border-radius: 16px;
+    min-height: auto;
+    padding: 68px 12px 20px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.7);
+  }
+
+  .img-box {
+    top: -88px;
+    width: 120px;
+  }
+
+  .img-box--ovo {
+    top: -60px;
+    width: 105px;
+  }
+
+  .tag {
+    font-size: 0.6rem;
+    padding: 4px 9px;
+    margin-bottom: 7px;
+  }
+
+  .card h3 {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+
+  .preco { font-size: 0.95rem; }
+
+  .card-actions { gap: 6px; margin-top: 7px; }
+
+  .btn-qty {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+    border-width: 1.5px;
+  }
+
+  .qty-display { font-size: 0.85rem; min-width: 12px; }
+
+  .sabor-linha {
+    padding: 5px 7px;
+    gap: 4px;
+    margin-top: 6px;
+    border-radius: 8px;
+  }
+
+  .btn-sabor-label { font-size: 0.65rem; min-width: 36px; }
+
+  .card-decorativo {
+    left: -18px;
+    top: 42%;
+  }
+
+  .card-decorativo img { width: 130px; }
+
+  /* [ 7.2 ] FLIP CARD */
+  .texto-lateral {
+    bottom: 260px;
+    right: auto;
+    left: 54%;
+    width: 170px;
+  }
+
+  .card-flip { height: 130px; }
+  .card-flip h2 { font-size: 0.8rem; }
+  .card-flip p  { font-size: 0.6rem; line-height: 1.4; }
+
+  /* [ 7.3 ] IMAGEM FINAL */
+  .imagem-final { right: auto; left: 50%; bottom: 0; }
+  .imagem-final img { width: 180px; max-width: 45vw; }
+
+  /* [ 7.4 ] BOTÃO WHATSAPP */
+  .btn-whatsapp {
+    bottom: 84px;
+    right: 8px;
+    font-size: 0.7rem;
+    padding: 9px 11px;
+    gap: 5px;
+  }
+
+  .btn-whatsapp img { width: 16px; height: 16px; }
+
+  /* [ 8 ] CARRINHO */
+  .carrinho-section { padding: 50px 5% 70px; gap: 24px; }
+  .carrinho-titulo h2 { font-size: 1.5rem; }
+  .carrinho-foto { width: 230px; }
+
+  .carrinho-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+    top: 16px;
+    right: 4px;
+    border-width: 2px;
+  }
+
+  /* [ 8.3 ] Lista */
+  .carrinho-lista { gap: 10px; }
+  .carrinho-item  { padding: 11px 14px; gap: 8px; }
+  .item-nome      { font-size: 0.88rem; }
+  .item-qty-num   { font-size: 0.88rem; }
+  .item-preco     { font-size: 0.88rem; min-width: 58px; }
+  .btn-item-qty   { width: 25px; height: 25px; font-size: 0.95rem; }
+
+  /* [ 8.4 ] Total */
+  .total-label { font-size: 0.95rem; }
+  .total-valor { font-size: 1.35rem; }
+
+  /* [ 8.5 ] Entrega */
+  .entrega-opcoes { flex-direction: column; gap: 10px; }
+  .btn-entrega    { padding: 13px 12px; font-size: 0.9rem; }
+
+  /* [ 8.6 ] Botão finalizar */
+  .btn-finalizar {
+    font-size: 0.95rem;
+    padding: 14px 26px;
+    gap: 8px;
+  }
+
+  .btn-finalizar img { width: 20px; height: 20px; }
+
+  /* [ 9 ] RODAPÉ */
+  .rodape   { padding: 20px 5%; }
+  .rodape p { font-size: 0.72rem; }
+}
+
+
+/* ============================================================
+   ATÉ 480PX — smartphones médios
+   ============================================================ */
+@media (max-width: 480px) {
+
+  /* [ 3 ] SOBRE */
+  .sobre-foto     { flex: 0 0 120px; }
+  .sobre-foto img { max-width: 120px; }
+  .sobre-texto h2 { font-size: 1.1rem; }
+  .sobre-texto p  { font-size: 0.68rem; }
+
+  /* [ 5 ] FAIXA */
+  .faixa-track span { font-size: 1.2rem; }
+
+  /* [ 7.1 ] GRID */
+  .cookies-grid { gap: 80px 10px; padding-top: 80px; }
+  .card-par     { margin-top: 40px; }
+  .card         { padding: 58px 9px 17px; border-radius: 12px; }
+  .img-box      { top: -74px; width: 105px; }
+  .img-box--ovo { top: -52px; width: 90px; }
+  .tag          { font-size: 0.54rem; padding: 3px 8px; }
+  .card h3      { font-size: 0.66rem; }
+  .preco        { font-size: 0.85rem; }
+  .btn-qty      { width: 21px; height: 21px; font-size: 0.8rem; }
+  .qty-display  { font-size: 0.75rem; }
+
+  .card-decorativo     { left: -12px; }
+  .card-decorativo img { width: 105px; }
+
+  /* [ 7.2 ] FLIP CARD */
+  .texto-lateral { bottom: 210px; right: auto; left: 52%; width: 140px; }
+  .card-flip     { height: 110px; }
+  .card-flip h2  { font-size: 0.68rem; }
+  .card-flip p   { font-size: 0.54rem; }
+
+  /* [ 7.3 ] IMAGEM FINAL */
+  .imagem-final     { right: auto; left: 48%; }
+  .imagem-final img { width: 140px; max-width: 38vw; }
+
+  /* [ 7.4 ] WHATSAPP */
+  .btn-whatsapp     { bottom: 68px; right: 5px; font-size: 0.6rem; padding: 7px 9px; }
+  .btn-whatsapp img { width: 14px; height: 14px; }
+
+  /* [ 8 ] CARRINHO */
+  .carrinho-foto  { width: 200px; }
+  .carrinho-badge { width: 32px; height: 32px; font-size: 0.8rem; }
+}
+
+
+/* ============================================================
+   ATÉ 390PX — iPhone 14 e menores
+   ============================================================ */
+@media (max-width: 390px) {
+
+  /* [ 3 ] SOBRE */
+  .sobre-foto     { flex: 0 0 100px; }
+  .sobre-foto img { max-width: 100px; }
+  .sobre-texto h2 { font-size: 0.95rem; }
+  .sobre-texto p  { font-size: 0.6rem; }
+
+  /* [ 5 ] FAIXA */
+  .faixa-track span { font-size: 1rem; }
+
+  /* [ 7.1 ] GRID */
+  .cookies-grid { gap: 68px 8px; padding-top: 68px; }
+  .card-par     { margin-top: 34px; }
+  .card         { padding: 50px 8px 14px; border-radius: 10px; }
+  .img-box      { top: -62px; width: 90px; }
+  .img-box--ovo { top: -44px; width: 78px; }
+  .tag          { font-size: 0.48rem; padding: 3px 6px; }
+  .card h3      { font-size: 0.58rem; }
+  .preco        { font-size: 0.75rem; }
+  .card-actions { gap: 4px; margin-top: 5px; }
+  .btn-qty      { width: 19px; height: 19px; font-size: 0.7rem; }
+  .qty-display  { font-size: 0.68rem; }
+  .sabor-linha  { padding: 3px 5px; }
+  .btn-sabor-label { font-size: 0.56rem; min-width: 28px; }
+
+  .card-decorativo     { left: -8px; }
+  .card-decorativo img { width: 88px; }
+
+  /* [ 7.2 ] FLIP CARD */
+  .texto-lateral { bottom: 180px; right: auto; left: 50%; width: 115px; }
+  .card-flip     { height: 95px; }
+  .card-flip h2  { font-size: 0.58rem; }
+  .card-flip p   { font-size: 0.48rem; }
+
+  /* [ 7.3 ] IMAGEM FINAL */
+  .imagem-final     { right: auto; left: 46%; }
+  .imagem-final img { width: 120px; max-width: 35vw; }
+
+  /* [ 7.4 ] WHATSAPP */
+  .btn-whatsapp     { bottom: 56px; right: 3px; font-size: 0.54rem; padding: 6px 8px; gap: 4px; }
+  .btn-whatsapp img { width: 12px; height: 12px; }
+
+  /* [ 8 ] CARRINHO */
+  .carrinho-foto  { width: 185px; }
+  .carrinho-badge { width: 30px; height: 30px; font-size: 0.75rem; top: 12px; right: 2px; }
+  .btn-finalizar  { font-size: 0.88rem; padding: 12px 20px; }
+}
