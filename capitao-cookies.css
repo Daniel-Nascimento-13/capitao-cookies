@@ -1,3 +1,4 @@
+
 /* ============================================================
    RESET GLOBAL
    ============================================================ */
@@ -17,8 +18,8 @@ body {
 
 /* ============================================================
    [ 1 ] VÍDEO DE FUNDO
-   Fixo na tela, cobre tudo em object-fit cover.
-   O overlay cria um escurecimento suave por cima.
+   FIXO NA TELA, COBRE TUDO EM OBJECT-FIT COVER.
+   O OVERLAY CRIA UM ESCURECIMENTO SUAVE POR CIMA.
    ============================================================ */
 #bgVideo {
   position: fixed;
@@ -43,7 +44,7 @@ body {
 
 /* ============================================================
    [ 2 ] HERO
-   Espaço em branco que ocupa 100vh para dar espaço ao vídeo.
+   ESPAÇO EM BRANCO QUE OCUPA 100VH PARA DAR ESPAÇO AO VÍDEO.
    ============================================================ */
 .hero {
   height: 100vh;
@@ -52,7 +53,7 @@ body {
 
 /* ============================================================
    [ 3 ] SOBRE
-   Foto do fundador e texto lado a lado.
+   FOTO DO FUNDADOR E TEXTO LADO A LADO.
    ============================================================ */
 .sobre {
   position: relative;
@@ -98,7 +99,7 @@ body {
   gap: 16px;
 }
 
-/* Tag laranja reutilizada em várias seções */
+/* TAG LARANJA REUTILIZADA EM VÁRIAS SEÇÕES */
 .sobre-tag {
   font-size: 0.9rem;
   font-weight: 550;
@@ -146,7 +147,7 @@ body {
 
 /* ============================================================
    [ 4 ] ONDA DE TRANSIÇÃO
-   SVG que faz a transição visual entre Sobre e a Faixa.
+   SVG QUE FAZ A TRANSIÇÃO VISUAL ENTRE SOBRE E A FAIXA.
    ============================================================ */
 .onda-container {
   width: 100%;
@@ -166,7 +167,7 @@ body {
 
 /* ============================================================
    [ 5 ] FAIXA DE TEXTO CORRIDO
-   Banner laranja com texto animado em loop pelo JS.
+   BANNER LARANJA COM TEXTO ANIMADO EM LOOP PELO JS.
    ============================================================ */
 .faixa-corrida {
   background: #C68B4A;
@@ -195,7 +196,7 @@ body {
 
 /* ============================================================
    [ 6 ] TÍTULO DO MENU
-   Cabeçalho da seção de produtos.
+   CABEÇALHO DA SEÇÃO DE PRODUTOS.
    ============================================================ */
 .menu-titulo {
   background: #000;
@@ -224,7 +225,7 @@ body {
 
 /* ============================================================
    [ 7 ] MENU DE PRODUTOS (WRAPPER)
-   Container pai de todo o bloco de produtos.
+   CONTAINER PAI DE TODO O BLOCO DE PRODUTOS.
    ============================================================ */
 .menu-wrapper {
   position: relative;
@@ -235,10 +236,8 @@ body {
 }
 
 
-/* ============================================================
-   [ 7.1 ] GRID DE COOKIES
-   Grid 2 colunas com cards que têm imagens flutuantes no topo.
-   ============================================================ */
+/* [ 7.1 ] GRID DE COOKIES
+   GRID 2 COLUNAS COM CARDS QUE TÊM IMAGENS FLUTUANTES NO TOPO. */
 .menu {
   background: #000;
   padding: 60px 5% 120px;
@@ -256,7 +255,7 @@ body {
   padding-top: 180px;
 }
 
-/* Cards da coluna da direita têm desnível para efeito visual */
+/* CARDS DA COLUNA DA DIREITA TÊM DESNÍVEL PARA EFEITO VISUAL */
 .card-par {
   margin-top: 90px;
 }
@@ -282,7 +281,7 @@ body {
   background: #1c1c1c;
 }
 
-/* Imagem do cookie flutua acima do card */
+/* IMAGEM DO COOKIE FLUTUA ACIMA DO CARD */
 .img-box {
   position: absolute;
   top: -180px;
@@ -300,7 +299,7 @@ body {
   display: block;
 }
 
-/* Variante para os ovos de cookie (menores) */
+/* VARIANTE PARA OS OVOS DE COOKIE (MENORES) */
 .img-box--ovo {
   top: -120px;
   width: 200px;
@@ -313,7 +312,7 @@ body {
   width: 100%;
 }
 
-/* Badge de descrição do produto */
+/* BADGE DE DESCRIÇÃO DO PRODUTO */
 .tag {
   background: #C68B4A;
   color: white;
@@ -339,7 +338,7 @@ body {
   font-weight: 700;
 }
 
-/* Controles de quantidade +/− */
+/* CONTROLES DE QUANTIDADE +/− */
 .card-actions {
   display: flex;
   align-items: center;
@@ -385,7 +384,7 @@ body {
   font-family: 'Fredoka', sans-serif;
 }
 
-/* Linha de sabor (card Black com Ferrero/Nutella) */
+/* LINHA DE SABOR (CARD BLACK COM FERRERO/NUTELLA) */
 .sabor-linha {
   display: flex;
   align-items: center;
@@ -417,7 +416,7 @@ body {
   text-align: left;
 }
 
-/* Imagem decorativa do Anderson com olhos virados */
+/* IMAGEM DECORATIVA DO ANDERSON COM OLHOS VIRADOS */
 .card-decorativo {
   position: absolute;
   left: -80px;
@@ -434,10 +433,8 @@ body {
 }
 
 
-/* ============================================================
-   [ 7.2 ] FLIP CARD — Sugestão de sabor
-   Ao clicar/hover vira e mostra o verso com a recompensa.
-   ============================================================ */
+/* [ 7.2 ] FLIP CARD — SUGESTÃO DE SABOR
+   AO CLICAR/HOVER VIRA E MOSTRA O VERSO COM A RECOMPENSA. */
 .texto-lateral {
   position: absolute;
   bottom: 300px;
@@ -502,10 +499,8 @@ body {
 }
 
 
-/* ============================================================
-   [ 7.3 ] IMAGEM DECORATIVA FINAL
-   Anderson com o celular, posicionada no canto direito.
-   ============================================================ */
+/* [ 7.3 ] IMAGEM DECORATIVA FINAL
+   ANDERSON COM O CELULAR, POSICIONADA NO CANTO DIREITO. */
 .imagem-final {
   position: absolute;
   bottom: 0;
@@ -522,9 +517,7 @@ body {
 }
 
 
-/* ============================================================
-   [ 7.4 ] BOTÃO WHATSAPP — Enviar ideia de sabor
-   ============================================================ */
+/* [ 7.4 ] BOTÃO WHATSAPP — ENVIAR IDEIA DE SABOR */
 .btn-whatsapp {
   position: absolute;
   bottom: 170px;
@@ -558,7 +551,7 @@ body {
 
 /* ============================================================
    [ 8 ] CARRINHO
-   Seção de pedido com lista de itens, total, entrega e botão.
+   SEÇÃO DE PEDIDO COM LISTA DE ITENS, TOTAL, ENTREGA E BOTÃO.
    ============================================================ */
 .carrinho-section {
   background: #000;
@@ -573,7 +566,7 @@ body {
   overflow: visible;
 }
 
-/* Degradê dourado no topo da seção */
+/* DEGRADÊ DOURADO NO TOPO DA SEÇÃO */
 .carrinho-section::before {
   content: '';
   position: absolute;
@@ -591,7 +584,7 @@ body {
   z-index: 2;
 }
 
-/* Canvas da chuva de emojis 🍪 */
+/* CANVAS DA CHUVA DE EMOJIS 🍪 */
 #chuva-canvas {
   position: absolute;
   top: 0;
@@ -604,7 +597,7 @@ body {
 }
 
 
-/* [ 8.1 ] Título do carrinho */
+/* [ 8.1 ] TÍTULO DO CARRINHO */
 .carrinho-titulo {
   display: flex;
   flex-direction: column;
@@ -625,7 +618,7 @@ body {
 }
 
 
-/* [ 8.2 ] Imagem do Anderson com badge de quantidade */
+/* [ 8.2 ] IMAGEM DO ANDERSON COM BADGE DE QUANTIDADE */
 .carrinho-cena {
   position: relative;
   width: 100%;
@@ -686,7 +679,7 @@ body {
 }
 
 
-/* [ 8.3 ] Lista de itens */
+/* [ 8.3 ] LISTA DE ITENS */
 .carrinho-lista {
   width: 100%;
   max-width: 560px;
@@ -777,7 +770,7 @@ body {
 }
 
 
-/* [ 8.4 ] Linha de total */
+/* [ 8.4 ] LINHA DE TOTAL */
 .carrinho-total-linha {
   width: 100%;
   max-width: 560px;
@@ -804,7 +797,7 @@ body {
 }
 
 
-/* [ 8.5 ] Seletor retirada / entrega */
+/* [ 8.5 ] SELETOR RETIRADA / ENTREGA */
 .entrega-box {
   width: 100%;
   max-width: 560px;
@@ -884,7 +877,7 @@ body {
 }
 
 
-/* [ 8.6 ] Botão finalizar pedido */
+/* [ 8.6 ] BOTÃO FINALIZAR PEDIDO */
 .btn-finalizar {
   display: flex;
   align-items: center;
@@ -950,8 +943,8 @@ body {
 
 /* ============================================================
    RESPONSIVIDADE — ATÉ 768PX
-   Mantém estrutura IDÊNTICA ao desktop.
-   Todos os elementos seguem a mesma ordem [ 1 ] → [ 9 ].
+   MANTÉM ESTRUTURA IDÊNTICA AO DESKTOP.
+   TODOS OS ELEMENTOS SEGUEM A MESMA ORDEM [ 1 ] → [ 9 ].
    ============================================================ */
 @media (max-width: 768px) {
 
@@ -963,11 +956,11 @@ body {
   }
 
   .sobre-foto {
-    flex: 0 0 150px;
+    flex: 0 0 170px;
   }
 
   .sobre-foto img {
-    max-width: 150px;
+    max-width: 170px;
   }
 
   .sobre-texto {
@@ -1124,7 +1117,7 @@ body {
     border-width: 2px;
   }
 
-  /* [ 8.3 ] Lista */
+  /* [ 8.3 ] LISTA */
   .carrinho-lista { gap: 10px; }
   .carrinho-item  { padding: 11px 14px; gap: 8px; }
   .item-nome      { font-size: 0.88rem; }
@@ -1132,15 +1125,15 @@ body {
   .item-preco     { font-size: 0.88rem; min-width: 58px; }
   .btn-item-qty   { width: 25px; height: 25px; font-size: 0.95rem; }
 
-  /* [ 8.4 ] Total */
+  /* [ 8.4 ] TOTAL */
   .total-label { font-size: 0.95rem; }
   .total-valor { font-size: 1.35rem; }
 
-  /* [ 8.5 ] Entrega */
+  /* [ 8.5 ] ENTREGA */
   .entrega-opcoes { flex-direction: column; gap: 10px; }
   .btn-entrega    { padding: 13px 12px; font-size: 0.9rem; }
 
-  /* [ 8.6 ] Botão finalizar */
+  /* [ 8.6 ] BOTÃO FINALIZAR */
   .btn-finalizar {
     font-size: 0.95rem;
     padding: 14px 26px;
@@ -1156,7 +1149,7 @@ body {
 
 
 /* ============================================================
-   ATÉ 480PX — smartphones médios
+   ATÉ 480PX — SMARTPHONES MÉDIOS
    ============================================================ */
 @media (max-width: 480px) {
 
@@ -1205,7 +1198,7 @@ body {
 
 
 /* ============================================================
-   ATÉ 390PX — iPhone 14 e menores
+   ATÉ 390PX — IPHONE 14 E MENORES
    ============================================================ */
 @media (max-width: 390px) {
 
