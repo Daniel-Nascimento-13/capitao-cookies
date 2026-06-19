@@ -17,7 +17,7 @@ body {
 
 
 /* ============================================================
-   [ 1 ] VÍDEO DE FUNDO
+   1 VÍDEO DE FUNDO
    FIXO NA TELA, COBRE TUDO EM OBJECT-FIT COVER.
    O OVERLAY CRIA UM ESCURECIMENTO SUAVE POR CIMA.
    ============================================================ */
@@ -43,16 +43,18 @@ body {
 
 
 /* ============================================================
-   [ 2 ] HERO
-   ESPAÇO EM BRANCO QUE OCUPA 100VH PARA DAR ESPAÇO AO VÍDEO.
+   2 HERO
+   ESPAÇO EM BRANCO QUE OCUPA A ALTURA DA TELA PARA DAR ESPAÇO AO VÍDEO.
+   SVH EVITA O "PULO" DA BARRA DO NAVEGADOR NO MOBILE.
    ============================================================ */
 .hero {
-  height: 100vh;
+  height: 100vh;   /* FALLBACK */
+  height: 100svh;
 }
 
 
 /* ============================================================
-   [ 3 ] SOBRE
+   3 SOBRE
    FOTO DO FUNDADOR E TEXTO LADO A LADO.
    ============================================================ */
 .sobre {
@@ -108,7 +110,7 @@ body {
   color: #C68B4A;
 }
 
-.sobre-texto h2 {
+.sobre-texto h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: #fff;
@@ -116,7 +118,7 @@ body {
   margin: 0;
 }
 
-.sobre-texto h2 span {
+.sobre-texto h1 span {
   color: #C68B4A;
 }
 
@@ -146,7 +148,7 @@ body {
 
 
 /* ============================================================
-   [ 4 ] ONDA DE TRANSIÇÃO
+   4 ONDA DE TRANSIÇÃO
    SVG QUE FAZ A TRANSIÇÃO VISUAL ENTRE SOBRE E A FAIXA.
    ============================================================ */
 .onda-container {
@@ -166,7 +168,7 @@ body {
 
 
 /* ============================================================
-   [ 5 ] FAIXA DE TEXTO CORRIDO
+   5 FAIXA DE TEXTO CORRIDO
    BANNER LARANJA COM TEXTO ANIMADO EM LOOP PELO JS.
    ============================================================ */
 .faixa-corrida {
@@ -195,7 +197,7 @@ body {
 
 
 /* ============================================================
-   [ 6 ] TÍTULO DO MENU
+   6 TÍTULO DO MENU
    CABEÇALHO DA SEÇÃO DE PRODUTOS.
    ============================================================ */
 .menu-titulo {
@@ -224,7 +226,7 @@ body {
 
 
 /* ============================================================
-   [ 7 ] MENU DE PRODUTOS (WRAPPER)
+   7 MENU DE PRODUTOS (WRAPPER)
    CONTAINER PAI DE TODO O BLOCO DE PRODUTOS.
    ============================================================ */
 .menu-wrapper {
@@ -236,7 +238,7 @@ body {
 }
 
 
-/* [ 7.1 ] GRID DE COOKIES
+/* 7.1 GRID DE COOKIES
    GRID 2 COLUNAS COM CARDS QUE TÊM IMAGENS FLUTUANTES NO TOPO. */
 .menu {
   background: #000;
@@ -433,7 +435,7 @@ body {
 }
 
 
-/* [ 7.2 ] FLIP CARD — SUGESTÃO DE SABOR
+/* 7.2 FLIP CARD — SUGESTÃO DE SABOR
    AO CLICAR/HOVER VIRA E MOSTRA O VERSO COM A RECOMPENSA. */
 .texto-lateral {
   position: absolute;
@@ -499,7 +501,7 @@ body {
 }
 
 
-/* [ 7.3 ] IMAGEM DECORATIVA FINAL
+/* 7.3 IMAGEM DECORATIVA FINAL
    ANDERSON COM O CELULAR, POSICIONADA NO CANTO DIREITO. */
 .imagem-final {
   position: absolute;
@@ -517,7 +519,7 @@ body {
 }
 
 
-/* [ 7.4 ] BOTÃO WHATSAPP — ENVIAR IDEIA DE SABOR */
+/* 7.4 BOTÃO WHATSAPP — ENVIAR IDEIA DE SABOR */
 .btn-whatsapp {
   position: absolute;
   bottom: 170px;
@@ -538,7 +540,7 @@ body {
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
 }
 
-.btn-whatsapp img {
+.btn-whatsapp svg {
   width: 26px;
   height: 26px;
 }
@@ -550,7 +552,7 @@ body {
 
 
 /* ============================================================
-   [ 8 ] CARRINHO
+   8 CARRINHO
    SEÇÃO DE PEDIDO COM LISTA DE ITENS, TOTAL, ENTREGA E BOTÃO.
    ============================================================ */
 .carrinho-section {
@@ -597,7 +599,7 @@ body {
 }
 
 
-/* [ 8.1 ] TÍTULO DO CARRINHO */
+/* 8.1 TÍTULO DO CARRINHO */
 .carrinho-titulo {
   display: flex;
   flex-direction: column;
@@ -618,7 +620,7 @@ body {
 }
 
 
-/* [ 8.2 ] IMAGEM DO ANDERSON COM BADGE DE QUANTIDADE */
+/* 8.2 IMAGEM DO ANDERSON COM BADGE DE QUANTIDADE */
 .carrinho-cena {
   position: relative;
   width: 100%;
@@ -679,7 +681,7 @@ body {
 }
 
 
-/* [ 8.3 ] LISTA DE ITENS */
+/* 8.3 LISTA DE ITENS */
 .carrinho-lista {
   width: 100%;
   max-width: 560px;
@@ -770,7 +772,7 @@ body {
 }
 
 
-/* [ 8.4 ] LINHA DE TOTAL */
+/* 8.4 LINHA DE TOTAL */
 .carrinho-total-linha {
   width: 100%;
   max-width: 560px;
@@ -797,7 +799,7 @@ body {
 }
 
 
-/* [ 8.5 ] SELETOR RETIRADA / ENTREGA */
+/* 8.5 SELETOR RETIRADA / ENTREGA */
 .entrega-box {
   width: 100%;
   max-width: 560px;
@@ -877,7 +879,7 @@ body {
 }
 
 
-/* [ 8.6 ] BOTÃO FINALIZAR PEDIDO */
+/* 8.6 BOTÃO FINALIZAR PEDIDO */
 .btn-finalizar {
   display: flex;
   align-items: center;
@@ -909,14 +911,14 @@ body {
   pointer-events: none;
 }
 
-.btn-finalizar img {
+.btn-finalizar svg {
   width: 26px;
   height: 26px;
 }
 
 
 /* ============================================================
-   [ 9 ] RODAPÉ
+   9 RODAPÉ
    ============================================================ */
 .rodape {
   background: #000;
@@ -944,11 +946,11 @@ body {
 /* ============================================================
    RESPONSIVIDADE — ATÉ 768PX
    MANTÉM ESTRUTURA IDÊNTICA AO DESKTOP.
-   TODOS OS ELEMENTOS SEGUEM A MESMA ORDEM [ 1 ] → [ 9 ].
+   TODOS OS ELEMENTOS SEGUEM A MESMA ORDEM 1 → 9.
    ============================================================ */
 @media (max-width: 768px) {
 
-  /* [ 3 ] SOBRE */
+  /* 3 SOBRE */
   .sobre {
     gap: 24px;
     padding: 50px 4% 0;
@@ -973,7 +975,7 @@ body {
     letter-spacing: 0.12em;
   }
 
-  .sobre-texto h2 {
+  .sobre-texto h1 {
     font-size: 1.35rem;
   }
 
@@ -987,29 +989,29 @@ body {
     font-size: 0.68rem !important;
   }
 
-  /* [ 4 ] ONDA */
+  /* 4 ONDA */
   .onda-container {
     height: 120px;
     margin-top: -120px;
   }
 
-  /* [ 5 ] FAIXA */
+  /* 5 FAIXA */
   .faixa-corrida { padding: 8px 0; }
   .faixa-track   { gap: 36px; }
   .faixa-track span { font-size: 1.5rem; }
 
-  /* [ 6 ] TÍTULO MENU */
+  /* 6 TÍTULO MENU */
   .menu-titulo {
     padding: 32px 5% 0;
     gap: 8px;
   }
   .menu-titulo h2 { font-size: 1.4rem; }
 
-  /* [ 7 ] MENU WRAPPER */
+  /* 7 MENU WRAPPER */
   .menu-wrapper { padding-bottom: 70px; overflow: hidden; }
   .menu { padding: 36px 4% 70px; }
 
-  /* [ 7.1 ] GRID DE COOKIES */
+  /* 7.1 GRID DE COOKIES */
   .cookies-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 95px 14px;
@@ -1076,7 +1078,7 @@ body {
 
   .card-decorativo img { width: 130px; }
 
-  /* [ 7.2 ] FLIP CARD */
+  /* 7.2 FLIP CARD */
   .texto-lateral {
     bottom: 260px;
     right: auto;
@@ -1088,11 +1090,11 @@ body {
   .card-flip h2 { font-size: 0.8rem; }
   .card-flip p  { font-size: 0.6rem; line-height: 1.4; }
 
-  /* [ 7.3 ] IMAGEM FINAL */
+  /* 7.3 IMAGEM FINAL */
   .imagem-final { right: auto; left: 50%; bottom: 0; }
   .imagem-final img { width: 180px; max-width: 45vw; }
 
-  /* [ 7.4 ] BOTÃO WHATSAPP */
+  /* 7.4 BOTÃO WHATSAPP */
   .btn-whatsapp {
     bottom: 84px;
     right: 8px;
@@ -1101,9 +1103,9 @@ body {
     gap: 5px;
   }
 
-  .btn-whatsapp img { width: 16px; height: 16px; }
+  .btn-whatsapp svg { width: 16px; height: 16px; }
 
-  /* [ 8 ] CARRINHO */
+  /* 8 CARRINHO */
   .carrinho-section { padding: 50px 5% 70px; gap: 24px; }
   .carrinho-titulo h2 { font-size: 1.5rem; }
   .carrinho-foto { width: 230px; }
@@ -1117,7 +1119,7 @@ body {
     border-width: 2px;
   }
 
-  /* [ 8.3 ] LISTA */
+  /* 8.3 LISTA */
   .carrinho-lista { gap: 10px; }
   .carrinho-item  { padding: 11px 14px; gap: 8px; }
   .item-nome      { font-size: 0.88rem; }
@@ -1125,24 +1127,24 @@ body {
   .item-preco     { font-size: 0.88rem; min-width: 58px; }
   .btn-item-qty   { width: 25px; height: 25px; font-size: 0.95rem; }
 
-  /* [ 8.4 ] TOTAL */
+  /* 8.4 TOTAL */
   .total-label { font-size: 0.95rem; }
   .total-valor { font-size: 1.35rem; }
 
-  /* [ 8.5 ] ENTREGA */
+  /* 8.5 ENTREGA */
   .entrega-opcoes { flex-direction: column; gap: 10px; }
   .btn-entrega    { padding: 13px 12px; font-size: 0.9rem; }
 
-  /* [ 8.6 ] BOTÃO FINALIZAR */
+  /* 8.6 BOTÃO FINALIZAR */
   .btn-finalizar {
     font-size: 0.95rem;
     padding: 14px 26px;
     gap: 8px;
   }
 
-  .btn-finalizar img { width: 20px; height: 20px; }
+  .btn-finalizar svg { width: 20px; height: 20px; }
 
-  /* [ 9 ] RODAPÉ */
+  /* 9 RODAPÉ */
   .rodape   { padding: 20px 5%; }
   .rodape p { font-size: 0.72rem; }
 }
@@ -1153,16 +1155,16 @@ body {
    ============================================================ */
 @media (max-width: 480px) {
 
-  /* [ 3 ] SOBRE */
+  /* 3 SOBRE */
   .sobre-foto     { flex: 0 0 120px; }
   .sobre-foto img { max-width: 120px; }
-  .sobre-texto h2 { font-size: 1.1rem; }
+  .sobre-texto h1 { font-size: 1.1rem; }
   .sobre-texto p  { font-size: 0.68rem; }
 
-  /* [ 5 ] FAIXA */
+  /* 5 FAIXA */
   .faixa-track span { font-size: 1.2rem; }
 
-  /* [ 7.1 ] GRID */
+  /* 7.1 GRID */
   .cookies-grid { gap: 80px 10px; padding-top: 80px; }
   .card-par     { margin-top: 40px; }
   .card         { padding: 58px 9px 17px; border-radius: 12px; }
@@ -1177,21 +1179,21 @@ body {
   .card-decorativo     { left: -12px; }
   .card-decorativo img { width: 105px; }
 
-  /* [ 7.2 ] FLIP CARD */
+  /* 7.2 FLIP CARD */
   .texto-lateral { bottom: 210px; right: auto; left: 52%; width: 140px; }
   .card-flip     { height: 110px; }
   .card-flip h2  { font-size: 0.68rem; }
   .card-flip p   { font-size: 0.54rem; }
 
-  /* [ 7.3 ] IMAGEM FINAL */
+  /* 7.3 IMAGEM FINAL */
   .imagem-final     { right: auto; left: 48%; }
   .imagem-final img { width: 140px; max-width: 38vw; }
 
-  /* [ 7.4 ] WHATSAPP */
+  /* 7.4 WHATSAPP */
   .btn-whatsapp     { bottom: 68px; right: 5px; font-size: 0.6rem; padding: 7px 9px; }
-  .btn-whatsapp img { width: 14px; height: 14px; }
+  .btn-whatsapp svg { width: 14px; height: 14px; }
 
-  /* [ 8 ] CARRINHO */
+  /* 8 CARRINHO */
   .carrinho-foto  { width: 200px; }
   .carrinho-badge { width: 32px; height: 32px; font-size: 0.8rem; }
 }
@@ -1202,16 +1204,16 @@ body {
    ============================================================ */
 @media (max-width: 390px) {
 
-  /* [ 3 ] SOBRE */
+  /* 3 SOBRE */
   .sobre-foto     { flex: 0 0 100px; }
   .sobre-foto img { max-width: 100px; }
-  .sobre-texto h2 { font-size: 0.95rem; }
+  .sobre-texto h1 { font-size: 0.95rem; }
   .sobre-texto p  { font-size: 0.6rem; }
 
-  /* [ 5 ] FAIXA */
+  /* 5 FAIXA */
   .faixa-track span { font-size: 1rem; }
 
-  /* [ 7.1 ] GRID */
+  /* 7.1 GRID */
   .cookies-grid { gap: 68px 8px; padding-top: 68px; }
   .card-par     { margin-top: 34px; }
   .card         { padding: 50px 8px 14px; border-radius: 10px; }
@@ -1229,22 +1231,37 @@ body {
   .card-decorativo     { left: -8px; }
   .card-decorativo img { width: 88px; }
 
-  /* [ 7.2 ] FLIP CARD */
+  /* 7.2 FLIP CARD */
   .texto-lateral { bottom: 180px; right: auto; left: 50%; width: 115px; }
   .card-flip     { height: 95px; }
   .card-flip h2  { font-size: 0.58rem; }
   .card-flip p   { font-size: 0.48rem; }
 
-  /* [ 7.3 ] IMAGEM FINAL */
+  /* 7.3 IMAGEM FINAL */
   .imagem-final     { right: auto; left: 46%; }
   .imagem-final img { width: 120px; max-width: 35vw; }
 
-  /* [ 7.4 ] WHATSAPP */
+  /* 7.4 WHATSAPP */
   .btn-whatsapp     { bottom: 56px; right: 3px; font-size: 0.54rem; padding: 6px 8px; gap: 4px; }
-  .btn-whatsapp img { width: 12px; height: 12px; }
+  .btn-whatsapp svg { width: 12px; height: 12px; }
 
-  /* [ 8 ] CARRINHO */
+  /* 8 CARRINHO */
   .carrinho-foto  { width: 185px; }
   .carrinho-badge { width: 30px; height: 30px; font-size: 0.75rem; top: 12px; right: 2px; }
   .btn-finalizar  { font-size: 0.88rem; padding: 12px 20px; }
+}
+
+
+/* ============================================================
+   ACESSIBILIDADE — REDUCED MOTION
+   DESLIGA ANIMAÇÕES/TRANSIÇÕES PARA QUEM PREFERE MENOS MOVIMENTO.
+   (A FAIXA E A CHUVA DE COOKIES JÁ SÃO DESLIGADAS NO JS.)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

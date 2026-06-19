@@ -1,51 +1,51 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capitão Cookies</title>
+    <meta name="description" content="Cookies artesanais feitos à mão em Lajeado. Tradicional, Black, Red Velvet e ovos recheados. Monte seu pedido e finalize pelo WhatsApp.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="capitao-cookies.css">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
 
     <!-- ============================================================
-         [ 1 ] VÍDEO DE FUNDO
          VÍDEO EM LOOP QUE COBRE TODA A TELA E SOME CONFORME O SCROLL.
          O OVERLAY ESCURECE LEVEMENTE O VÍDEO PARA LEGIBILIDADE.
          ============================================================ -->
-    <video autoplay muted loop playsinline preload="auto" id="bgVideo">
+    <video autoplay muted loop playsinline preload="metadata" id="bgVideo">
       <source src="FOTOS/video-cookie.mp4" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
 
 
     <!-- ============================================================
-         [ 2 ] HERO
-         SEÇÃO INVISÍVEL QUE OCUPA 100VH PARA DAR ESPAÇO AO VÍDEO
-         ANTES DE O CONTEÚDO COMEÇAR.
+         2  HERO
+         SEÇÃO INVISÍVEL QUE OCUPA A ALTURA DA TELA PARA DAR ESPAÇO
+         AO VÍDEO ANTES DE O CONTEÚDO COMEÇAR.
          ============================================================ -->
     <section class="hero"></section>
 
 
     <!-- ============================================================
-         [ 3 ] SOBRE
+         3  SOBRE
          APRESENTAÇÃO DO FUNDADOR ANDERSON: FOTO + TEXTO LADO A LADO.
          ============================================================ -->
     <section class="sobre">
 
       <div class="sobre-foto">
-        <img src="./FOTOS/ander.png" alt="Fundador Capitão Cookies">
+        <img src="./FOTOS/ander.png" alt="Fundador Capitão Cookies" loading="lazy" decoding="async">
       </div>
 
       <div class="sobre-texto">
         <span class="sobre-tag">Quem somos</span>
-        <h2>O Capitão<br>por trás dos <span>cookies</span></h2>
+        <h1>O Capitão<br>por trás dos <span>cookies</span></h1>
         <p>
           Minha jornada não começou em cursos renomados, mas no <strong>calor da cozinha de casa</strong>.
           Com minha mãe, aprendi que doces são mais que ingredientes:
@@ -64,7 +64,7 @@
 
 
     <!-- ============================================================
-         [ 4 ] ONDA DE TRANSIÇÃO
+         4 ONDA DE TRANSIÇÃO
          SVG COM GRADIENTE QUE CRIA A TRANSIÇÃO VISUAL ENTRE A SEÇÃO
          SOBRE E A FAIXA DE TEXTO.
          ============================================================ -->
@@ -86,7 +86,7 @@
 
 
     <!-- ============================================================
-         [ 5 ] FAIXA DE TEXTO CORRIDO
+         5 FAIXA DE TEXTO CORRIDO
          BANNER LARANJA COM TEXTO ANIMADO QUE MUDA DE DIREÇÃO
          CONFORME O SENTIDO DO SCROLL DO USUÁRIO.
          ============================================================ -->
@@ -103,7 +103,7 @@
 
 
     <!-- ============================================================
-         [ 6 ] TÍTULO DO MENU
+         6 TÍTULO DO MENU
          CABEÇALHO DA SEÇÃO DE PRODUTOS COM TAG E TÍTULO PRINCIPAL.
          ============================================================ -->
     <div class="menu-titulo">
@@ -113,18 +113,18 @@
 
 
     <!-- ============================================================
-         [ 7 ] MENU DE PRODUTOS (WRAPPER)
+         7 MENU DE PRODUTOS (WRAPPER)
          CONTAINER PRINCIPAL QUE AGRUPA O GRID DE COOKIES, A IMAGEM
          DECORATIVA LATERAL, O FLIP CARD DE SUGESTÃO E O BOTÃO WHATSAPP.
          ============================================================ -->
     <div class="menu-wrapper">
 
-      <!-- [ 7.1 ] GRID DE COOKIES -->
+      <!-- 7.1 GRID DE COOKIES -->
       <section class="menu" id="menu">
 
         <!-- IMAGEM DECORATIVA DO ANDERSON COM OS OLHOS VIRADOS -->
         <div class="card-decorativo">
-          <img src="./FOTOS/ander-cookies-olhos.png" alt="">
+          <img src="./FOTOS/ander-cookies-olhos.png" alt="" loading="lazy" decoding="async">
         </div>
 
         <div class="cookies-grid">
@@ -132,7 +132,7 @@
           <!-- CARD 1 — TRADICIONAL DE NUTELLA -->
           <div class="card" data-nome="Tradicional de Nutella" data-preco="12">
             <div class="img-box">
-              <img src="./FOTOS/cookie-tradicional-nutella.png" alt="Cookie Tradicional de Nutella">
+              <img src="./FOTOS/cookie-tradicional-nutella.png" alt="Cookie Tradicional de Nutella" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">O clássico absoluto!</span>
@@ -149,7 +149,7 @@
           <!-- CARD 2 — BLACK (COM SELETOR DE SABOR INDEPENDENTE POR LINHA) -->
           <div class="card card-par" data-multi="true" data-preco="12">
             <div class="img-box">
-              <img src="./FOTOS/cookie-ferrero.png" alt="Cookie Black">
+              <img src="./FOTOS/cookie-ferrero.png" alt="Cookie Black" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">A intensidade do cacau com requinte!</span>
@@ -177,7 +177,7 @@
           <!-- CARD 3 — NINHO COM NUTELLA -->
           <div class="card" data-nome="Ninho com Nutella" data-preco="12">
             <div class="img-box">
-              <img src="./FOTOS/cookie-ninho-nutella.png" alt="Cookie Ninho com Nutella">
+              <img src="./FOTOS/cookie-ninho-nutella.png" alt="Cookie Ninho com Nutella" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">A dupla perfeita!</span>
@@ -194,7 +194,7 @@
           <!-- CARD 4 — RED VELVET COM CHOCO BRANCO -->
           <div class="card card-par" data-nome="Red Velvet com Choco Branco" data-preco="12">
             <div class="img-box">
-              <img src="./FOTOS/cookie-choco-branco.png" alt="Cookie Red Velvet com Chocolate Branco">
+              <img src="./FOTOS/cookie-choco-branco.png" alt="Cookie Red Velvet com Chocolate Branco" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">Elegância e suavidade em cada mordida!</span>
@@ -211,7 +211,7 @@
           <!-- CARD 5 — RED VELVET COM NINHO -->
           <div class="card" data-nome="Red Velvet com Ninho" data-preco="12">
             <div class="img-box">
-              <img src="./FOTOS/cookie-ninho.png" alt="Cookie Red Velvet com Ninho">
+              <img src="./FOTOS/cookie-ninho.png" alt="Cookie Red Velvet com Ninho" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">O mais cremoso!</span>
@@ -228,7 +228,7 @@
           <!-- CARD 6 — RED VELVET COM NINHO E NUTELLA -->
           <div class="card card-par" data-nome="Red Velvet com Ninho e Nutella" data-preco="12">
             <div class="img-box">
-              <img src="./FOTOS/cookie-redvelvet-ninho-nutella.png" alt="Cookie Red Velvet com Ninho e Nutella">
+              <img src="./FOTOS/cookie-redvelvet-ninho-nutella.png" alt="Cookie Red Velvet com Ninho e Nutella" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">O triunfo de luxo!</span>
@@ -245,7 +245,7 @@
           <!-- CARD 7 — RED VELVET COM NUTELLA -->
           <div class="card" data-nome="Red Velvet com Nutella" data-preco="12">
             <div class="img-box">
-              <img src="./FOTOS/cookie-redvelvet-nutella.png" alt="Cookie Red Velvet com Nutella">
+              <img src="./FOTOS/cookie-redvelvet-nutella.png" alt="Cookie Red Velvet com Nutella" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">Paixão Carmim!</span>
@@ -262,7 +262,7 @@
           <!-- CARD 8 — OVO DE COOKIES NUTELLA -->
           <div class="card card-par" data-nome="Ovo de Cookies Nutella" data-preco="85">
             <div class="img-box img-box--ovo">
-              <img src="./FOTOS/ovo-nutella.png" alt="Ovo de Cookies Nutella">
+              <img src="./FOTOS/ovo-nutella.png" alt="Ovo de Cookies Nutella" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">O gigante recheado!</span>
@@ -279,7 +279,7 @@
           <!-- CARD 9 — OVO DE COOKIES RED VELVET E CHOCO BRANCO -->
           <div class="card" data-nome="Ovo de Cookies Red Velvet e Choco Branco" data-preco="85">
             <div class="img-box img-box--ovo">
-              <img src="./FOTOS/ovo-redvelvet.png" alt="Ovo de Cookies Red Velvet e Chocolate Branco">
+              <img src="./FOTOS/ovo-redvelvet.png" alt="Ovo de Cookies Red Velvet e Chocolate Branco" loading="lazy" decoding="async">
             </div>
             <div class="card-info">
               <span class="tag">O gigante de luxo recheado!</span>
@@ -296,7 +296,7 @@
         </div>
       </section>
 
-      <!-- [ 7.2 ] FLIP CARD — CONVITE PARA SUGESTÃO DE SABOR -->
+      <!-- 7.2 FLIP CARD — CONVITE PARA SUGESTÃO DE SABOR -->
       <div class="texto-lateral">
         <div class="card-flip" id="cardFlip">
           <div class="card-frente">
@@ -312,22 +312,23 @@
         </div>
       </div>
 
-      <!-- [ 7.3 ] IMAGEM DECORATIVA FINAL — ANDERSON COM O CELULAR -->
+      <!-- 7.3 IMAGEM DECORATIVA FINAL — ANDERSON COM O CELULAR -->
       <div class="imagem-final">
-        <img src="./FOTOS/ander-ideia-cookie.png" alt="Capitão Cookies">
+        <img src="./FOTOS/ander-ideia-cookie.png" alt="Capitão Cookies" loading="lazy" decoding="async">
       </div>
 
-      <!-- [ 7.4 ] BOTÃO WHATSAPP — ENVIAR SUGESTÃO DE SABOR -->
-      <a class="btn-whatsapp" id="btnWhatsapp" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">Enviar ideia
+      <!-- 7.4 BOTÃO WHATSAPP — ENVIAR SUGESTÃO DE SABOR -->
+      <a class="btn-whatsapp" id="btnWhatsapp" href="https://wa.me/5551998372079" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Enviar ideia
       </a>
 
     </div>
-    <!-- FIM [ 7 ] MENU WRAPPER -->
+    <!-- FIM 7 MENU WRAPPER -->
 
 
     <!-- ============================================================
-         [ 8 ] CARRINHO
+         8 CARRINHO
          EXIBE OS ITENS ADICIONADOS, TOTAL DO PEDIDO, ESCOLHA ENTRE
          RETIRADA OU ENTREGA, E O BOTÃO DE FINALIZAR VIA WHATSAPP.
          ============================================================ -->
@@ -336,32 +337,32 @@
       <!-- CANVAS DA ANIMAÇÃO DE CHUVA DE COOKIES 🍪 -->
       <canvas id="chuva-canvas"></canvas>
 
-      <!-- [ 8.1 ] TÍTULO -->
+      <!-- 8.1 TÍTULO -->
       <div class="carrinho-titulo">
         <span class="sobre-tag">Seu pedido</span>
         <h2>Seu <span>carrinho</span></h2>
       </div>
 
-      <!-- [ 8.2 ] IMAGEM DO ANDERSON COM BADGE DE QUANTIDADE -->
+      <!-- 8.2 IMAGEM DO ANDERSON COM BADGE DE QUANTIDADE -->
       <div class="carrinho-cena">
         <div class="carrinho-svg-wrap">
-          <img src="./FOTOS/ander-carrinho.png" alt="Capitão Anderson com carrinho de cookies" class="carrinho-foto">
+          <img src="./FOTOS/ander-carrinho.png" alt="Capitão Anderson com carrinho de cookies" class="carrinho-foto" loading="lazy" decoding="async">
           <div class="carrinho-badge" id="carrinhoTotal">0</div>
         </div>
       </div>
 
-      <!-- [ 8.3 ] LISTA DE ITENS ADICIONADOS -->
+      <!-- 8.3 LISTA DE ITENS ADICIONADOS -->
       <div class="carrinho-lista" id="carrinhoLista">
         <p class="carrinho-vazio" id="carrinhoVazio">Nenhum item ainda. Adicione seus cookies favoritos! 🍪</p>
       </div>
 
-      <!-- [ 8.4 ] LINHA DE TOTAL -->
+      <!-- 8.4 LINHA DE TOTAL -->
       <div class="carrinho-total-linha" id="carrinhoTotalLinha" style="display:none;">
         <span class="total-label">Total do pedido</span>
         <span class="total-valor" id="carrinhoTotalValor">R$0,00</span>
       </div>
 
-      <!-- [ 8.5 ] SELETOR DE RETIRADA / ENTREGA -->
+      <!-- 8.5 SELETOR DE RETIRADA / ENTREGA -->
       <div class="entrega-box" id="entregaBox" style="display:none;">
         <p class="entrega-titulo">Como deseja receber?</p>
         <div class="entrega-opcoes">
@@ -377,18 +378,18 @@
         </div>
       </div>
 
-      <!-- [ 8.6 ] BOTÃO FINALIZAR PEDIDO VIA WHATSAPP -->
-      <button class="btn-finalizar desabilitado" id="btnFinalizar">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      <!-- 8.6 BOTÃO FINALIZAR PEDIDO VIA WHATSAPP -->
+      <button class="btn-finalizar desabilitado" id="btnFinalizar" disabled>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Finalizar Pedido
       </button>
 
     </section>
-    <!-- FIM [ 8 ] CARRINHO -->
+    <!-- FIM 8 CARRINHO -->
 
 
     <!-- ============================================================
-         [ 9 ] RODAPÉ
+         9 RODAPÉ
          COPYRIGHT E INFORMAÇÃO INSTITUCIONAL DA MARCA.
          ============================================================ -->
     <footer class="rodape">
@@ -396,7 +397,6 @@
       <p>Marca registrada e consolidada há mais de 5 anos no mercado de cookies artesanais.</p>
     </footer>
 
-<script src="capitao-cookies.js" defer></script>
+    <script src="main.js" defer></script>
   </body>
 </html>
-    
